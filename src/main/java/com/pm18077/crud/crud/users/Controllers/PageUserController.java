@@ -5,12 +5,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pm18077.crud.crud.users.entities.User;
 import com.pm18077.crud.crud.users.repository.UserRepository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @Controller
@@ -37,5 +40,19 @@ public class PageUserController {
         userRepository.save(user);
         return "redirect:/users";
     }
+
+    @GetMapping("editar/{id}")
+    public String formularioEditarUser(Model model, @PathVariable Long id) {
+        User usuario = userRepository.findById(id).get();
+        model.addAttribute("usuario", usuario);
+        return "form-user";
+    }
+    
+    @GetMapping("eliminar/{id}")
+    public String eliminarUser(@PathVariable Long id) {
+        userRepository.delete(new User(id));
+        return "redirect:/users";
+    }
+    
     
 }

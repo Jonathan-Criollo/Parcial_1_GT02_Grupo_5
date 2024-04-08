@@ -25,7 +25,7 @@
                         <td th:text="${usr.name}"></td>
                         <td>
                             <a class="btn btn-info" th:href="@{'/editar/' + ${usr.id}}">Editar</a>
-                            <a class="btn btn-danger" th:href="@{'/editar/' + ${usr.id}}"
+                            <a class="btn btn-danger" th:href="@{'/eliminar/' + ${usr.id}}"
                             onclick="return confirm('Seguro deseas eliminar este registro')"                  
                             >Eliminar</a>
                         </td>
