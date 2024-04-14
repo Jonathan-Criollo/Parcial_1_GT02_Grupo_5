@@ -1,7 +1,7 @@
 # Indicaciones para ejecutar
 
 ### 1. Clonar el repositorio
-git clone git@github.com:Jonathan-Criollo/Parcial_1_GT02_Grupo_5.git
+git clone https://github.com/Jonathan-Criollo/Parcial_1_GT02_Grupo_5.git
 
 ### 2. Abrimos el proyecto en VScode
 
