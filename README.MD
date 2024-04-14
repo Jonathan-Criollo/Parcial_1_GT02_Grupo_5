@@ -7,15 +7,11 @@ git clone git@github.com:Jonathan-Criollo/Parcial_1_GT02_Grupo_5.git
 
 ### 3. Abrimos docker-desktop
 
-### 4. En la terminal ejecutamos
-(solo asi pudimos xd) 
-mvn clean package -DskipTests
+### 4. Levantamos proyecto sin rastro de caché 
+#### (ocupamos el punto y coma porque aparentemente los ampersand decían que no era un separador de instrucciones válido en esta versión xd)
+docker-compose down; docker-compose build --no-cache; docker-compose up -d
 
-### 5. Levantamos proyecto sin rastro de caché
-docker-compose down && docker-compose build --no-cache && docker-compose up -d
-
-### 6. Abrimos el localhost 8080
-
+### 5. Abrimos el localhost 8080
 http://localhost:8080/users
 
 # Integrantes del grupo:
